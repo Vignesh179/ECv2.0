@@ -5,6 +5,7 @@ import { AboutComponent } from './about/about.component';
 import { MycartComponent } from './mycart/mycart.component';
 import { HomeComponent } from './home/home.component';
 
+
 const routes: Routes = [
   {path:'products',component:ProductsComponent},
   {path:'about',component:AboutComponent},
