@@ -1,0 +1,19 @@
+    
+    <mat-grid-list cols="1" rowHeight="2:1" style="align-items: center;">
+        <mat-grid-tile class="my-grid-tile" >
+        
+    
+      <div *ngFor="let x of products; let i = index" style="border: 1px solid black; padding: 10px; margin: 5px;">
+        <img [src]="x.imgprd" style="align-items: center;"><br>
+
+        <h2>{{x.name}}</h2><br>
+        <h2>{{x.price | currency:"INR"}}</h2><br>
+        <button mat-raised-button color="primary">Add to cart</button>
+      </div>
+  
+        
+        </mat-grid-tile>
+        
+      </mat-grid-list>
+    
+    
