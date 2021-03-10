@@ -12,7 +12,7 @@
       <input type="text" [(ngModel)]="imgprd" placeholder="Enter Product Image URL">
       <br>
       <br>
-      <button mat-fab color="primary" (click)="addProduct()">Add</button>
+      <button mat-raised-button color="primary" (click)="addProduct()">Add</button>
       <br><br>
            <hr>                 
       
@@ -34,11 +34,22 @@
       <tr *ngFor="let x of products; let i = index">
         <td>{{i + 1}}</td>
         <td>{{x.name}}</td>
-        <td><img [src]="x.imgprd"></td>
+        <td>
+        <img [src]="x.imgprd">
+        </td>
         <td>{{x.price | currency:"INR"}}</td>
-        <td><button mat-mini-fab color="warn" (click)="decF()">-</button> <button mat-mini-fab color="warn" (click)="incF()">+</button><span>{{inc}}</span></td>
+
+        <td>
+        <button mat-mini-fab color="primary" (click)="decF()">-</button> 
+        <button mat-mini-fab color="primary" (click)="incF()">+</button>
+        <span>{{inc}}</span>
+        </td>
+
         <td>{{x.price * inc | currency:"INR"}}</td>
-        <td><button mat-button color="warn" (click)="delete(i)">Delete</button></td>
+
+        <td>
+        <button mat-button color="warn" (click)="delete(i)">Delete</button>
+        </td>
       </tr>
       <tr>
         
