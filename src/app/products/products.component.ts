@@ -13,7 +13,7 @@ export class ProductsComponent implements OnInit {
   products:any = [];
   tot:any;
   imgprd:any;
-  inc:number = 1;
+  inc:any = 1;
   dec:any =1;
   constructor() {
     let a = localStorage.getItem('products');
