@@ -40,9 +40,11 @@
         <td>{{x.price | currency:"INR"}}</td>
 
         <td>
-        <button mat-mini-fab color="primary" (click)="decF()">-</button> 
-        <button mat-mini-fab color="primary" (click)="incF()">+</button>
-        <span>{{inc}}</span>
+          
+        <button mat-mini-stroked (click)="decF()">-</button>  
+        <span> {{inc}} </span>
+        <button mat-mini-stroked (click)="incF()">+</button>
+        
         </td>
 
         <td>{{x.price * inc | currency:"INR"}}</td>
@@ -58,7 +60,7 @@
       </tr>
       <tr>
         
-          <td colspan="6" style="text-align: right;"> {{tot | currency:"INR"}}</td>
+          <td colspan="6" style="text-align: right;"> {{tot * inc | currency:"INR"}}</td>
       
       </tr>
     </table>  
