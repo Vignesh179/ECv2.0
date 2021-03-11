@@ -1,3 +1,4 @@
+import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
 import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 
@@ -14,8 +15,9 @@ export class ProductsComponent implements OnInit {
   products:any = [];
   tot:any;
   imgprd:any;
-  inc:number =1;
-  dec:number =1;
+  inca:any;
+  fval:any
+  // deca:any =1;
 
 
   constructor() {
@@ -34,15 +36,19 @@ export class ProductsComponent implements OnInit {
     let list = {
       name: this.pname,
       price: this.pprice,
-      imgprd: this.imgprd
+      imgprd: this.imgprd,
+      inca:this.inca,
+      tot:this.tot
+      // dec:this.deca
     }
     
     this.products.push(list);
+    console.log(this.products);
     localStorage.setItem('products', JSON.stringify(this.products));
 
 
-    this.tot = this.products.reduce((a:number,b:any)=>{
-      return a + parseInt(b.price);
+    this.tot = this.products.reduce((a:any,b:any)=>{
+      return a + parseInt(b.price) * (b.inca);
     },0);
     
     localStorage.setItem('tot',this.tot);
@@ -51,13 +57,13 @@ export class ProductsComponent implements OnInit {
   delete(i: any) {
     this.products.splice(i, 1);
   }
-  incF(){
-    this.inc = this.inc+1;
-    
-  }
-  decF(){
-    this.dec = this.inc--;
-}
+//   incF(){
+//     this.inc++
+//   }
+//   decF(){
+//     this.dec = this.inc--;
+//     return this.dec;
+// }
   ngOnInit(): void {
   }
   
