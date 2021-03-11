@@ -1,12 +1,12 @@
-<mat-grid-list cols="2" >
+<mat-grid-list cols="2">
   <mat-grid-tile>
     <div class="s">
       <h1>Add Products</h1>
       <h2>Product Name</h2>
-      <input matInput type="text" [(ngModel)]="fname" placeholder="Enter Product Name">
+      <input matInput type="text" [(ngModel)]="pname" placeholder="Enter Product Name">
       <br><br>
       <h2>Product Price</h2>
-      <input type="number" [(ngModel)]="fprice" placeholder="Enter Product Price">
+      <input type="number" [(ngModel)]="pprice" placeholder="Enter Product Price">
       <br><br>
       <h2>Product Image URL</h2>
       <input type="text" [(ngModel)]="imgprd" placeholder="Enter Product Image URL">
@@ -14,57 +14,46 @@
       <br>
       <button mat-raised-button color="primary" (click)="addProduct()">Add</button>
       <br><br>
-           <hr>                 
-      
-      </div>
+      <hr>
+    </div>
   </mat-grid-tile>
   <mat-grid-tile>
     <div class="s">
       <h1>Products List</h1>
-    <table>
-      <tr>
-        <th>S.No</th>
-        <th>Name</th>
-        <th>Image</th>
-        <th>Price</th>
-        <th>Quantity</th>
-        <th>Total</th>
-        <th>Delete</th>
-      </tr>
-      <tr *ngFor="let x of products; let i = index">
-        <td>{{i + 1}}</td>
-        <td>{{x.name}}</td>
-        <td>
-        <img [src]="x.imgprd">
-        </td>
-        <td>{{x.price | currency:"INR"}}</td>
-
-        <td>
-          
-        <button mat-mini-stroked (click)="decF()">-</button>  
-        <span> {{inc}} </span>
-        <button mat-mini-stroked (click)="incF()">+</button>
-        
-        </td>
-
-        <td>{{x.price * inc | currency:"INR"}}</td>
-
-        <td>
-        <button mat-button color="warn" (click)="delete(i)">Delete</button>
-        </td>
-      </tr>
-      <tr>
-        
+      <table>
+        <tr>
+          <th>S.No</th>
+          <th>Name</th>
+          <th>Image</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+          <th>Delete</th>
+        </tr>
+        <tr *ngFor="let x of products; let i = index">
+          <td>{{i + 1}}</td>
+          <td>{{x.name}}</td>
+          <td>
+            <img [src]="x.imgprd">
+          </td>
+          <td>{{x.price | currency:"INR"}}</td>
+          <td>
+            <button mat-mini-stroked (click)="decF()">-</button>
+            <span> {{inc}} </span>
+            <button mat-mini-stroked (click)="incF()">+</button>
+          </td>
+          <td>{{x.price * inc | currency:"INR"}}</td>
+          <td>
+            <button mat-button color="warn" (click)="delete(i)">Delete</button>
+          </td>
+        </tr>
+        <tr>
           <td colspan="6" style="text-align: right;"><b>Total</b> </td>
-         
-      </tr>
-      <tr>
-        
-          <td colspan="6" style="text-align: right;"> {{tot * inc | currency:"INR"}}</td>
-      
-      </tr>
-    </table>  
+        </tr>
+        <tr>
+          <td colspan="6" style="text-align: right; font-weight: bold; font-size: large;"> {{tot * inc | currency:"INR"}}</td>
+        </tr>
+      </table>
     </div>
   </mat-grid-tile>
-
 </mat-grid-list>
