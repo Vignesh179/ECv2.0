@@ -40,12 +40,13 @@
           <td>
             <button mat-mini-stroked (click)="decF()">-</button>
             <span> {{inc}} </span>
-            <button mat-mini-stroked (click)="incF()">+</button>
+            <button mat-mini-stroked (click)="inc = inc + 1">+</button>
           </td>
-          <td>{{x.price * inc | currency:"INR"}}</td>
+          <td>{{x.price * inc | currency:"INR"}} </td>
           <td>
             <button mat-button color="warn" (click)="delete(i)">Delete</button>
           </td>
+    
         </tr>
         <tr>
           <td colspan="6" style="text-align: right;"><b>Total</b> </td>
