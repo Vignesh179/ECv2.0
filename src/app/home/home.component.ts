@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
       this.tot = total;
     }
    }
-  addProduct() {
+  add2cart() {
     let list = {
       name: this.fname,
       price: this.fprice,
@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
     }
     this.products.push(list);
     localStorage.setItem('products', JSON.stringify(this.products));
-
+    // console.log(this.products);
 
     this.tot = this.products.reduce((a:number,b:any)=>{
       return a + parseInt(b.price);
