@@ -9,8 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class ProductsComponent implements OnInit {
 
   //variables
-  fname:any = '';
-  fprice:any; 
+  pname:any = '';
+  pprice:any; 
   products:any = [];
   tot:any;
   imgprd:any;
@@ -32,10 +32,11 @@ export class ProductsComponent implements OnInit {
    //add product function
   addProduct() {
     let list = {
-      name: this.fname,
-      price: this.fprice,
+      name: this.pname,
+      price: this.pprice,
       imgprd: this.imgprd,
     }
+    
     this.products.push(list);
     localStorage.setItem('products', JSON.stringify(this.products));
 
@@ -51,7 +52,8 @@ export class ProductsComponent implements OnInit {
     this.products.splice(i, 1);
   }
   incF(){
-    this.inc = this.inc +1;
+    this.inc = this.inc+1;
+    
   }
   decF(){
     this.dec = this.inc--;
