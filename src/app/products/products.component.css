@@ -1,6 +1,10 @@
 input{
     
     height: 30px;
+  
+}
+.iw{
+    width: 50px;
 }
 table,th,tr,td{
     border-collapse: collapse;
