@@ -8,14 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
 
+  //variables
   fname:any = '';
   fprice:any; 
   products:any = [];
   tot:any;
   imgprd:any;
-  inc:any = 1;
-  dec:any =1;
+  inc:number =1;
+  dec:number =1;
+
+
   constructor() {
+    //Local Storage
     let a = localStorage.getItem('products');
     if (a) {
       this.products = JSON.parse(a);
@@ -25,6 +29,7 @@ export class ProductsComponent implements OnInit {
       this.tot = total;
     }
    }
+   //add product function
   addProduct() {
     let list = {
       name: this.fname,
@@ -46,10 +51,10 @@ export class ProductsComponent implements OnInit {
     this.products.splice(i, 1);
   }
   incF(){
-    this.inc +=1;
+    this.inc = this.inc +1;
   }
   decF(){
-    this.dec -=1;
+    this.dec = this.inc--;
 }
   ngOnInit(): void {
   }
