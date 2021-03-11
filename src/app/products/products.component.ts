@@ -34,7 +34,7 @@ export class ProductsComponent implements OnInit {
     let list = {
       name: this.pname,
       price: this.pprice,
-      imgprd: this.imgprd,
+      imgprd: this.imgprd
     }
     
     this.products.push(list);
