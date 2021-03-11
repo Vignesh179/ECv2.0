@@ -57,6 +57,14 @@ export class ProductsComponent implements OnInit {
   delete(i: any) {
     this.products.splice(i, 1);
   }
+  clear(){
+    let li={
+      name: this.pname="",
+      price: this.pprice="",
+      imgprd: this.imgprd="",
+      inca:this.inca="",
+    }
+  }
 //   incF(){
 //     this.inc++
 //   }
