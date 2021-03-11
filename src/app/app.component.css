@@ -4,3 +4,8 @@ a{
     padding-left: 10px;
     color: aliceblue;
 }
+a:hover{
+    font-size: 24px;
+    padding: 5px;
+    border-top: 2px solid white;
+}
