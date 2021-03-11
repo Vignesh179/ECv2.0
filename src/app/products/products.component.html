@@ -8,6 +8,9 @@
       <h2>Product Price</h2>
       <input type="number" [(ngModel)]="pprice" placeholder="Enter Product Price">
       <br><br>
+      <h2>Quantity</h2>
+      <input type="number" [(ngModel)]="inca" placeholder="Enter Product Quantity">
+      <br><br>
       <h2>Product Image URL</h2>
       <input type="text" [(ngModel)]="imgprd" placeholder="Enter Product Image URL">
       <br>
@@ -38,11 +41,12 @@
           </td>
           <td>{{x.price | currency:"INR"}}</td>
           <td>
-            <button mat-mini-stroked (click)="decF()">-</button>
+            <input class="iw" type="number" [(ngModel)]="x.inca" placeholder="Enter Product Quantity">
+            <!-- <button mat-mini-stroked (click)="decF()">-</button>
             <span> {{inc}} </span>
-            <button mat-mini-stroked (click)="inc = inc + 1">+</button>
+            <button mat-mini-stroked (click)="incF()">+</button> -->
           </td>
-          <td>{{x.price * inc | currency:"INR"}} </td>
+          <td > {{x.price * x.inca | currency:"INR"}} </td>
           <td>
             <button mat-button color="warn" (click)="delete(i)">Delete</button>
           </td>
@@ -51,8 +55,8 @@
         <tr>
           <td colspan="6" style="text-align: right;"><b>Total</b> </td>
         </tr>
-        <tr>
-          <td colspan="6" style="text-align: right; font-weight: bold; font-size: large;"> {{tot * inc | currency:"INR"}}</td>
+        <tr > 
+          <td colspan="6" style="text-align: right; font-weight: bold; font-size: large;"> {{tot | currency:"INR"}}</td>
         </tr>
       </table>
     </div>
