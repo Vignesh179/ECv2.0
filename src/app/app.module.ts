@@ -17,6 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { HomeComponent } from './home/home.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
@@ -33,7 +34,7 @@ import { HomeComponent } from './home/home.component';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
-    MatCardModule,
+    MatCardModule,MatDialogModule,
     FormsModule, ReactiveFormsModule, HttpClientModule, MatTabsModule, MatFormFieldModule, MatButtonModule, MatTableModule, MatGridListModule
 
   ],
