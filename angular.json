@@ -14,21 +14,21 @@
         }
       },
       "root": "",
-      "sourceRoot": "src",
+      "sourceRoot": "source",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/EC",
-            "index": "src/home.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
+            "index": "source/home.html",
+            "main": "source/main.ts",
+            "polyfills": "source/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "source/favicon.ico",
+              "source/assets"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
@@ -40,8 +40,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "source/environments/environment.ts",
+                  "with": "source/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -86,13 +86,13 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
+            "main": "source/test.ts",
+            "polyfills": "source/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "source/favicon.ico",
+              "source/assets"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
