@@ -7,9 +7,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MycartComponent implements OnInit {
 
-  constructor() { }
+products:any=[];
+tot:any;
 
-  ngOnInit(): void {
+
+ constructor() {
+   //Local Storage
+   let a = localStorage.getItem('products');
+   if (a) {
+     this.products = JSON.parse(a);
+   }
+   let total = localStorage.getItem('tot');
+   if(total){
+     this.tot = total;
+   }
   }
+  //add product function
+ 
+   
+ 
+
+ delete(i: any) {
+   this.products.splice(i, 1);
+ }
+
+//   incF(){
+//     this.inc++
+//   }
+//   decF(){
+//     this.dec = this.inc--;
+//     return this.dec;
+// }
+ ngOnInit(): void {
+ }
+ 
 
 }
+
